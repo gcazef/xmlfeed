@@ -1,12 +1,12 @@
 # XMLFeed
 
-Product feed parser
+XML product feed parser
 
 ## Requirements
  - docker
  - docker-compose
 
-## Usage
+## Getting started
 
 First, build the docker image:
 ```bash
@@ -23,6 +23,12 @@ Finally, you can start/stop the server using:
 ```bash
 $> docker-compose up -d --build
 $> docker-compose down
+```
+
+## Usage
+Fetch orders from API:
+```bash
+$> docker-compose run web python /code/manage.py fetch_orders
 ```
 
 ## Testing
