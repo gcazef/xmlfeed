@@ -43,8 +43,13 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         nb_orders = int(self.root.xpath('//statistics/orders_count/count_total')[0].text)
+        new_orders = 0
         for i in range(nb_orders):
-            new_order = Order()
+            data = dict()
             for name, field_type, path in self.fields:
-                setattr(new_order, name, self.get_value(path, field_type, i))
-            new_order.save()
+                data[name] = self.get_value(path, field_type, i)
+            obj, created = Order.objects.update_or_create(**data)
+            new_orders = new_orders + 1 if created else new_orders
+        self.stdout.write(
+            "All orders fetched: %d created, %d updated" % (new_orders, (nb_orders - new_orders))
+        )
