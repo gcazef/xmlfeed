@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <title>Orders</title>
+    </head>
+    <header>
+        <nav>
+            <div class="nav-wrapper light-blue darken-3">
+                <a href="{% url 'allorders' %}" class="brand-logo center">Orders</a>
+                {% comment %} <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{% url 'submit' %}">Poser une question</a></li>
+                    <li><a href="{% url 'answer' %}">Admin</a></li>
+                </ul> {% endcomment %}
+            </div>
+        </nav>
+    </header>
+    <body>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

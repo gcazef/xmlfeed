@@ -1,0 +1,22 @@
+{% extends '../base.html' %}
+
+{% block content %}
+
+<div class="row"></div>
+<a class="waves-effect waves-light btn green accent-4" href="{% url 'allorders' %}">Back to the list</a>
+<div class="row"></div>
+<div class="card">
+    <div class="card-content">
+        {% if order %}
+            <span class="card-title">Order ID: {{ order.unique_id }}</span>
+            <p>Purchase date: {{ order.purchase_date }}</p>
+            <p>Ordered by: {{ order.billing_lastname }}</p>
+            <p>Amount: {{ order.amount }}€</p>
+            <p>{{ order.nb_items }} items</p>
+        {% else %}
+            <span class="card-title">This order does not exist</span>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
