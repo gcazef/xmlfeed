@@ -1,34 +1,35 @@
 # XMLFeed
 
-XML product feed parser
+XML product feed parser for Lengow Test API
 
 ## Requirements
  - docker
  - docker-compose
+ - GNU Make
 
 ## Getting started
 
-First, build the docker image:
+The API url can be changed in settings, under ```ORDER_API_URL```
+
+First, build and initialize the docker image:
 ```bash
-$> docker build .
+$> make install
 ```
 
-You can then migrate the database and create a superuser:
+And run the database and server:
 ```bash
-$> docker-compose run web python /code/manage.py migrate --noinput
-$> docker-compose run web python /code/manage.py createsuperuser
+$> make run
 ```
 
-Finally, you can start/stop the server using:
+To run in background use:
 ```bash
-$> docker-compose up -d --build
-$> docker-compose down
+$> make run_bg
 ```
 
 ## Usage
-Fetch orders from API:
+To fetch orders from the API:
 ```bash
-$> docker-compose run web python /code/manage.py fetch_orders
+$> make fetch_orders
 ```
 
 ## Testing
