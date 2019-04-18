@@ -9,6 +9,7 @@
     <div class="card-content">
         {% if order %}
             <span class="card-title">Order ID: {{ order.unique_id }}</span>
+            <p>Marketplace: {{ order.marketplace }}</p>
             <p>Purchase date: {{ order.purchase_date }}</p>
             <p>Ordered by: {{ order.billing_lastname }}</p>
             <p>Amount: {{ order.amount }}€</p>

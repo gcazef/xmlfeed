@@ -24,5 +24,6 @@ class AllOrdersListView(ListView):
             updated_context = self.model.objects.all().order_by('purchase_date')
         return updated_context
 
+
 class OrderDetailView(DetailView):
     model = Order
