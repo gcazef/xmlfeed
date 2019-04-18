@@ -1,5 +1,4 @@
 # XMLFeed
-
 XML product feed parser for Lengow Test API
 
 ## Requirements
@@ -8,8 +7,7 @@ XML product feed parser for Lengow Test API
  - GNU Make
 
 ## Getting started
-
-The API url can be changed in settings, under ```ORDER_API_URL```
+The API url can be changed in settings, under ```ORDER_API_URL```.
 
 First, build and initialize the docker image:
 ```bash
@@ -33,3 +31,7 @@ $> make fetch_orders
 ```
 
 ## Testing
+Run the tests with:
+```bash
+$> make run
+```

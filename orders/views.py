@@ -5,6 +5,7 @@ from .models import Order
 
 
 class AllOrdersListView(ListView):
+
     model = Order
     paginate_by = 10
 
@@ -26,4 +27,5 @@ class AllOrdersListView(ListView):
 
 
 class OrderDetailView(DetailView):
+
     model = Order
