@@ -36,5 +36,5 @@ You can make requests on the orders saved in database using the ```/api``` url.
 ## Testing
 Run the tests with:
 ```bash
-$> make run
+$> make test
 ```
